@@ -1,0 +1,12 @@
+.DS_Store
+.idea
+
+build/
+docs/_build/
+dist/
+compressed_deque.egg-info/
+*.pyc
+*.swp
+*.egg
+
+
