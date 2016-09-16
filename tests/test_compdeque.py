@@ -37,6 +37,10 @@ class TestCompressedDeque(TestCase):
 
         self.assertEqual(list(collection), [item1, item2])
 
+    def test_initial_data(self):
+        collection = CompressedDeque([1, 2, 3])
+        self.assertEqual(collection[0], 1)
+
     def test_persistance_simple_objects(self):
         with TempDir() as temp_directory:
             file_path = os.path.join(temp_directory, 'compressed_deque.dat')
