@@ -10,8 +10,8 @@ class CompressedDeque(deque):
     def __init__(self, iterable=(), maxlen=None, compression_level=4):
         if compression_level < 0 or compression_level > 9:
             raise ValueError("Compression level must range from 0 to 9")
-        super(CompressedDeque, self).__init__([self._compress(item) for item in iterable], maxlen)
         self.compression_level = compression_level
+        super(CompressedDeque, self).__init__([self._compress(item) for item in iterable], maxlen)
 
     def __iter__(self):
         return (self._decompress(compressed_value) for compressed_value in super(CompressedDeque, self).__iter__())
